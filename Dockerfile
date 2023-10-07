@@ -25,13 +25,20 @@ RUN npm install -g @mermaid-js/mermaid-cli
 RUN npm cache clean --force
 RUN git clone https://github.com/mamer-alomari/MetaGPT.git
 
+
 # Install Python dependencies and install MetaGPT
-RUN cd metagpt
+#RUN #cd metagpt
 RUN mkdir workspace
-RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ &&\
-    pip install -r requirements.txt &&\
-    pip cache purge &&\
-    python setup.py install
+RUN cd MetaGPT
+#RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+RUN pip install -e .
+RUN pip cache purge
+#
+#RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
+#RUN pip install -r requirements.txt
+#RUN pip cache purge
+#RUN python setup.py install
 
 # Running with an infinite loop using the tail command
 CMD ["sh", "-c", "tail -f /dev/null"]
