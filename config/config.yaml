@@ -4,7 +4,7 @@
 
 #### if OpenAI
 
-OPENAI_API_KEY: "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"
+#OPENAI_API_KEY: ""
 OPENAI_API_BASE: "gpt-3.5-turbo"
 OPENAI_API_MODEL: "gpt-3.5-turbo"
 MAX_TOKENS: 1500
