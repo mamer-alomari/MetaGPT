@@ -23,7 +23,7 @@ WORKDIR /app
 RUN npm config set registry https://registry.npm.taobao.org &&\
     npm install -g @mermaid-js/mermaid-cli &&\
     npm cache clean --force &&\
-    git https://github.com/mamer-alomari/MetaGPT.git
+    git clone https://github.com/mamer-alomari/MetaGPT.git
 
 # Install Python dependencies and install MetaGPT
 RUN cd metagpt &&\
