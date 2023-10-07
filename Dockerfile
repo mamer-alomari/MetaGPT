@@ -3,7 +3,10 @@
 
 # Use a base image with Python 3.9.17 slim version (Bullseye)
 FROM python:3.9.17-slim-bullseye
-
+ENV OPENAI_API_KEY="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"
+RUN echo $OPENAI_API_KEY
+ENV OPENAI_API_MODEL: "gpt-3.5-turbo" \
+RUN echo $OPENAI_API_MODEL
 # Install Debian software needed by MetaGPT
 RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list &&\
     apt update &&\
