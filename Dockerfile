@@ -2,8 +2,9 @@
 # For users outside mainland China, feel free to modify or delete them :)
 
 # Use a base image with Python 3.9.17 slim version (Bullseye)
-#FROM python:3.9.17-slim-bullseye
-#ENV OPENAI_API_KEY="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"
+FROM python:3.9.17-slim-bullseye
+ENV OPENAI_API_KEY=""
+
 RUN echo $OPENAI_API_KEY
 ENV OPENAI_API_MODEL: "gpt-3.5-turbo" \
 RUN echo $OPENAI_API_MODEL
