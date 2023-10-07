@@ -3,7 +3,7 @@
 
 # Use a base image with Python 3.9.17 slim version (Bullseye)
 FROM python:3.9.17-slim-bullseye
-ENV OPENAI_API_KEY="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"
+ENV OPENAI_API_KEY="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"
 RUN echo $OPENAI_API_KEY
 ENV OPENAI_API_MODEL: "gpt-3.5-turbo" \
 RUN echo $OPENAI_API_MODEL
