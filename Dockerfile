@@ -20,15 +20,15 @@ RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list &&\
 WORKDIR /app
 
 # Install Mermaid CLI globally and clone the MetaGPT repository
-RUN npm config set registry https://registry.npm.taobao.org &&\
-    npm install -g @mermaid-js/mermaid-cli &&\
-    npm cache clean --force &&\
-    git clone https://github.com/mamer-alomari/MetaGPT.git
+RUN npm config set registry https://registry.npm.taobao.org
+RUN npm install -g @mermaid-js/mermaid-cli
+RUN npm cache clean --force
+RUN git clone https://github.com/mamer-alomari/MetaGPT.git
 
 # Install Python dependencies and install MetaGPT
-RUN cd metagpt &&\
-    mkdir workspace &&\
-    pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ &&\
+RUN cd metagpt
+RUN mkdir workspace
+RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ &&\
     pip install -r requirements.txt &&\
     pip cache purge &&\
     python setup.py install
